@@ -40,9 +40,9 @@ public class MinHeap implements Heap {
     //Hint: remember to update size.  Also, remember that we skip index 0 in the array.
     /*Your code here */
 
-    int index = size + 1;
-    for(this.elts[0] = p; p < this.elts[index/2]; index/=2) {
-      this.elts[index] = this.elts[index/2];
+    int index = ++size;
+    for(this.elts[0] = p; p < this.elts[index / 2]; index /= 2) {
+      this.elts[index] = this.elts[index / 2];
     }
 
     this.elts[index] = p;
@@ -51,7 +51,7 @@ public class MinHeap implements Heap {
   public void delFront(){
     /*Your code here */
     int index = 1;
-    this.elts[index] = this.elts[size - 1];
+    this.elts[index] = this.elts[size--];
     percolateDown(index);
   }
 
